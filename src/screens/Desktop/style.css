@@ -192,11 +192,6 @@
   padding: 0 2rem 0 2rem;
 }
 
-.desktop .text-wrapper-2 {
-  font-family: "Noto Sans", Helvetica;
-  font-size: 1.5rem;
-}
-
 .desktop .frame-arrow {
   align-items: flex-end;
   display: flex;
@@ -385,8 +380,7 @@
 
 .desktop .card-paragraph {
   padding: 1rem;
-  font-family: "Noto Sans", Helvetica;
-  font-size: 16px;
+  font-family: "Montserrat", Helvetica;
   font-weight: 500;
   letter-spacing: 0;
   line-height: normal;

@@ -52,7 +52,7 @@ class Desktop extends Component {
                   textBefore="Performant with a minimal impact on the environment."
                   textAfter="Site emits only 0.005g of CO2 emissions per visit. "
                   href="#"
-                  imageEffect={<Image className="card-image" alt="Vector" src="../../static/img/vector.svg" />}
+                  imageEffect={<Image className="card-image" alt="Vector" src="/assets/img/vector.svg" />}
 
                 />
               </div>
