@@ -1,4 +1,3 @@
-// import React from "react";
 import { h, render, Component } from 'preact';
 
 import { Header } from '../../components/Header';
@@ -7,29 +6,17 @@ import { HeroTopRight } from '../../components/HeroTopRight';
 import { Image } from '../../components/Image';
 
 
-import Lenis from "@studio-freight/lenis";
+import { ReactLenis, useLenis } from '@studio-freight/react-lenis'
 import "./style.css";
 import { Card } from '../../components/Card';
-
-const lenis = new Lenis()
-
-lenis.on('scroll', (e) => {
-
-})
-
-function raf(time) {
-  lenis.raf(time)
-  requestAnimationFrame(raf)
-}
-
-requestAnimationFrame(raf)
-// Lenis Setup finish
 
 
 class Desktop extends Component {
 
   render() {
+
     return (
+      <ReactLenis root>
       <div className="desktop">
         <div className="main">
           <Header />
@@ -43,7 +30,7 @@ class Desktop extends Component {
                   headerAfter="Carbon 🡓"
                   textBefore="Performant with a minimal impact on the environment."
                   textAfter="Site emits only 0.005g of CO2 emissions per visit. "
-                  href="#"
+                  link="#test"
                   icon="♲"
                 />
                 <Card
@@ -51,7 +38,7 @@ class Desktop extends Component {
                   headerAfter="Work"
                   textBefore="Performant with a minimal impact on the environment."
                   textAfter="Site emits only 0.005g of CO2 emissions per visit. "
-                  href="#"
+                  link="#work"
                   imageEffect={<Image className="card-image" alt="Vector" src="/assets/img/vector.svg" />}
 
                 />
@@ -72,6 +59,7 @@ class Desktop extends Component {
                   </div>
                   <div className="applet-icon">⚘</div>
                 </div>
+
 
               </div>
             </div>
@@ -98,6 +86,7 @@ class Desktop extends Component {
           <div className="footer" />
         </div>
       </div>
+      </ReactLenis>
     )
   }
 }

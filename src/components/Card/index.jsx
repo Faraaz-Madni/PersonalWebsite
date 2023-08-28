@@ -1,5 +1,6 @@
 import { h, render, Component } from "preact"
 import { Image } from "../Image";
+import { ArrowFrame } from "../ArrowFrame";
 
 export class Card extends Component {
     render(props) {
@@ -16,11 +17,12 @@ export class Card extends Component {
                     {props.textAfter}
                 </p>
 
-                <div className="frame-arrow">
+                {/* <div className="frame-arrow">
                     <a className="button-arrow" href={props.link}>
                         🡥
                     </a>
-                </div>
+                </div> */}
+                <ArrowFrame link={props.link}/>
 
                 <div className="card-icon">
                     {props.icon}

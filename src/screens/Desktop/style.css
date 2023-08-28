@@ -2,6 +2,8 @@
   --color: #ffffffd8;
   --color-counter: #121212;
   --gradient-main: linear-gradient(108deg, rgba(25, 38, 71, 1.00) 0%, rgba(25, 27, 31, 0.25) 20%, rgba(0, 68, 245, 0.00) 54%, rgba(19, 73, 211, 0.20) 81%, rgba(0, 0, 0, 0.00) 100%);
+  --border-color: #2a2a2a;
+
   background-position: center center;
   --gradient-secondary: background-image: linear-gradient(182deg, rgba(48, 65, 109, 1.00) 0%, rgba(0, 68, 245, 0.00) 43%, rgba(0, 0, 0, 0.00) 87%);
   background-position: center center;
@@ -11,6 +13,7 @@
   gap: 10px;
   position: relative;
   width: 100%;
+
 }
 
 .desktop .main {
@@ -18,7 +21,8 @@
   padding: 1% 5% 1% 5%;
 }
 
-/* Outer containers finish */
+
+/* Default Element Styles finish */
 
 .desktop .text-small {
   font-size: 1vw;
@@ -141,10 +145,9 @@
   position: relative;
   background-image: var(--gradient-main);
   width: 100%;
-  object-fit: cover;
 }
 
-.image-name{
+.image-name {
   position: absolute;
   width: 100%;
   top: 42.5%;
@@ -152,14 +155,14 @@
   animation: animation-image-name-start 1.5s linear;
 }
 
-@keyframes animation-image-name-start{
-  from{
+@keyframes animation-image-name-start {
+  from {
     opacity: 0;
-    top: 35%;
   }
-  to{
+
+  to {
     opacity: 1;
-    top: 42.5%;
+
   }
 }
 
@@ -250,16 +253,18 @@
   animation: animation-frame-projects 20s linear infinite;
 }
 
-@keyframes animation-frame-projects{
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+@keyframes animation-frame-projects {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 
@@ -290,16 +295,102 @@
   font-size: 20px;
   font-weight: 400;
   position: relative;
+  cursor: pointer;
+  user-select: none;
 }
 
-.desktop .image-projects {
+.desktop .frame-image-projects {
+  display: flex;
+  flex-direction: column;
   border: 1px solid;
-  border-color: var(--color);
+  border-color: var(--border-color);
   border-radius: 40px;
   min-height: 10rem;
   height: 70%;
   position: relative;
   width: 90%;
+  overflow: scroll;
+  overscroll-behavior: none;
+  scroll-snap-type: y mandatory;
+}
+
+.desktop .frame-image-projects-2{
+  height: 100%;
+  width: 100%;
+
+}
+
+.desktop .image-projects{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  padding: 1%;
+  scroll-snap-align: start;
+  animation: animation-project-info-toggle linear .4s;
+}
+
+.desktop .project-info {
+  width: 100%;
+  height: 100%;
+  animation: animation-project-info-toggle linear .4s;
+}
+
+@keyframes animation-project-info-toggle {
+  from{
+    opacity: 0%;
+  }
+  to{
+    opacity: 100%;
+  }
+}
+
+.project-info h1 {
+  font-family: 'Montserrat';
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  padding: 5%;
+  letter-spacing: .25rem;
+  scroll-snap-align: start;
+}
+
+
+
+.desktop .project-info h2 {
+  font-family: 'Montserrat';
+  justify-content: flex-start;
+  padding: 2.5%;
+  font-weight: 500;
+  scroll-snap-align: start;
+
+}
+
+.desktop .project-info p,
+.desktop .project-info ul {
+  font-family: 'Montserrat';
+  justify-content: flex-start;
+  padding: 4rem;
+  font-weight: 400;
+  letter-spacing: .15rem;
+  word-spacing: normal;
+  line-height: normal;
+  list-style-type: square;
+}
+
+.desktop .blinkingCursor {
+  opacity: 1;
+  user-select: none;
+  animation: animation-blinkingCursor steps(2) 1s infinite;
+}
+
+@keyframes animation-blinkingCursor {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
 }
 
 .desktop .marquee-projects {
@@ -335,10 +426,12 @@
   from {
     transform: translateX(0);
   }
+
   to {
     transform: translateX(calc(-100% - var(--gap)));
   }
 }
+
 /* Top Right Hero finish */
 
 .desktop .hero-bottom {
@@ -351,7 +444,7 @@
 }
 
 .desktop .card {
-  border: 1px solid var(--color);
+  border: 1px solid var(--border-color);
   border-radius: 40px;
   display: flex;
   flex-direction: column;
@@ -389,7 +482,8 @@
   z-index: 5;
 }
 
-.card-image, .card-image2,
+.card-image,
+.card-image2,
 .card-icon {
   padding: 0;
   position: absolute;
@@ -407,18 +501,18 @@
   text-align: center;
 }
 
-.card-icon{
+.card-icon {
   padding: 2.5% 5% 0 0;
   z-index: 3;
 }
 
-.card-image{
+.card-image {
   z-index: 1;
   padding: 1rem;
   animation: card-animation-image-effect 10s infinite linear;
 }
 
-.card-image2{
+.card-image2 {
   padding: 1rem;
   z-index: 2;
 }
@@ -436,7 +530,7 @@
 
   }
 
-  100%{
+  100% {
     transform: scale(2);
     opacity: 0;
   }

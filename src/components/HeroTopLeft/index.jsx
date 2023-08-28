@@ -1,5 +1,6 @@
 import { h, render, Component } from "preact";
 import { Image } from "../Image";
+import { ArrowFrame } from "../ArrowFrame";
 
 export class HeroTopLeft extends Component {
     render() {
@@ -16,11 +17,8 @@ export class HeroTopLeft extends Component {
                     <p className="text-medium">I like data. Tons of data.</p>
                 </div>
 
-                <div className="frame-arrow">
-                    <div className="button-arrow">
-                        <p className="text-arrow"> 🡥</p>
-                    </div>
-                </div>
+                <ArrowFrame link="#About"/>
+
 
             </div >
         )

@@ -10,7 +10,7 @@ export class Header extends Component {
                     </a>
                 </div>
                 <ul className="frame-nav-r">
-                    <li className="buttons-navbar">About</li>
+                    <li className="buttons-navbar"><a href="/about">About</a></li>
                     <li className="buttons-navbar">Services</li>
                     <li className="buttons-navbar">Blog</li>
                     <li className="buttons-navbar">Contact</li>

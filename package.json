@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@studio-freight/lenis": "^1.0.19",
+    "@studio-freight/react-lenis": "^0.0.26",
     "preact": "^10.16.0"
   },
   "devDependencies": {
