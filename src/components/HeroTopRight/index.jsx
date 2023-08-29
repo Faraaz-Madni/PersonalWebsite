@@ -1,5 +1,5 @@
 import { h, render, Component } from "preact"
-// import Lenis from "@studio-freight/lenis";
+import { Image } from "../Image";
 import { ReactLenis, useLenis } from '@studio-freight/react-lenis'
 
 export class HeroTopRight extends Component {
@@ -23,8 +23,8 @@ export class HeroTopRight extends Component {
                 <div className="frame-projects">
                     <div className="projects-header">
                         <p className="projects-header-text-left">Project Spotlight</p>
-                        <p className="projects-header-text-right" onClick={this.toggleInfo}>info</p>
-                        <p className="projects-header-text-right">site 🡥</p>
+                        <p className="projects-header-text-right clickable" onClick={this.toggleInfo}>info</p>
+                        <p className="projects-header-text-right clickable">site 🡥</p>
                     </div>
 
                     <div
@@ -46,14 +46,18 @@ export class HeroTopRight extends Component {
                             </ul>
                         </div>}
                         {!showInfo && <div className="frame-image-projects-2">
-                        <img className="image-projects" src="/assets/img/CrimeWatchLogo.jpg"/>
-                        <img className="image-projects" src="/assets/img/CrimeWatchLogo.jpg"/>
-                        <img className="image-projects" src="/assets/img/CrimeWatchLogo.jpg"/>
+                        <Image alt="'Crimewatch' is written alongside a map of Kenya." className="image-projects" src="/assets/img/CrimeWatchLogo.avif"/>
+                        <Image alt="'Crimewatch' is written alongside a map of Kenya." className="image-projects" src="/assets/img/CrimeWatchLogo.webp"/>
+
                         </div>
                         }
                     </div>
 
                     <div className="marquee-projects">
+                        <ul className="marquee-projects-text">
+                            <li>CRIMEWATCH</li>
+                            <li>✧</li>
+                        </ul>
                         <ul className="marquee-projects-text">
                             <li>CRIMEWATCH</li>
                             <li>✧</li>

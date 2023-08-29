@@ -21,8 +21,24 @@
   padding: 1% 5% 1% 5%;
 }
 
+/* Main Containers finish */
+
+a{
+  text-decoration: none;
+  color:unset;
+}
 
 /* Default Element Styles finish */
+
+.clickable{
+  color:inherit;
+}
+
+.clickable:hover{
+  color: #ffffff !important;
+}
+
+/* Custom Elements finish */
 
 .desktop .text-small {
   font-size: 1vw;
@@ -38,20 +54,20 @@
 
 /* Text sizes finish */
 
-
 .desktop .navigation-bar {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   position: relative;
 }
 
 .desktop .frame-nav-l {
   display: flex;
+  flex:1;
+  flex-basis: 50%;
   align-content: center;
   justify-content: start;
   padding: 1rem 0 1rem 0;
-  flex-basis: 100%;
 }
 
 .desktop .frame-logo {
@@ -65,14 +81,14 @@
   border: 1px solid rgba(255, 255, 255, 0.50);
   color: #ffc;
   border-radius: 30px;
-  width: 3rem;
+  width: 25%;
   overflow: hidden;
   position: relative;
-  padding-bottom: .25rem;
+  padding-bottom: .5%;
 }
 
 .desktop .text-wrapper {
-  font-family: "Nico Moji-Regular", Helvetica;
+  font-family: "Montserrat", Helvetica;
   font-size: 24px;
   font-weight: 400;
   letter-spacing: 0;
@@ -83,11 +99,36 @@
 
 .desktop .frame-nav-r {
   display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  gap: 1rem;
+  flex:1;
+  flex-basis: 50%;
+  flex-direction: row;
+  justify-content: center;
   padding: 1rem;
-  width: 100%;
+  opacity: .5;
+}
+
+.desktop .frame-nav-r ul{
+  display: flex;
+  flex:1;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-evenly;
+  filter: blur(0px);
+}
+
+.desktop .frame-nav-r li{
+  filter: blur(0px);
+  transition: .5s;
+}
+
+.desktop .frame-nav-r ul:hover li:not(:hover){
+  filter: blur(4px);
+  transition: .5s;
+}
+
+.desktop .frame-nav-r ul li:hover{
+  filter: blur(0px);
+  transition: .5s;
 }
 
 .desktop .buttons-navbar {
@@ -96,7 +137,6 @@
   font-weight: 400;
   letter-spacing: 0;
   line-height: normal;
-  opacity: 0.5;
 }
 
 /* Navbar finish */
@@ -141,7 +181,7 @@
   flex: 1;
   flex-basis: 10%;
   align-items: center;
-  height: 100%;
+  max-height: 60%;
   position: relative;
   background-image: var(--gradient-main);
   width: 100%;
@@ -150,7 +190,7 @@
 .image-name {
   position: absolute;
   width: 100%;
-  top: 42.5%;
+  top: 12.5vh;
   z-index: 1;
   animation: animation-image-name-start 1.5s linear;
 }
@@ -252,7 +292,6 @@
   height: 100%;
   animation: animation-frame-projects 20s linear infinite;
 }
-
 @keyframes animation-frame-projects {
   0% {
     background-position: 0% 50%;
@@ -276,14 +315,13 @@
   position: relative;
   width: 100%;
   margin: 2.5% 0 0 0;
+  font-family: "Montserrat", Helvetica;
 }
 
 .desktop .projects-header-text-left {
   color: #ffffffcc;
-  font-family: "Michroma", Helvetica;
-  font-size: 18px;
-  font-weight: 400;
-  letter-spacing: 0;
+  font-weight: 500;
+  letter-spacing: 1px;
   line-height: normal;
   position: relative;
   text-align: center;
@@ -291,8 +329,6 @@
 
 .desktop .projects-header-text-right {
   color: #ffffff80;
-  font-family: "Michroma", Helvetica;
-  font-size: 20px;
   font-weight: 400;
   position: relative;
   cursor: pointer;
@@ -312,7 +348,13 @@
   overflow: scroll;
   overscroll-behavior: none;
   scroll-snap-type: y mandatory;
+  scrollbar-width: none;
 }
+
+.frame-image-projects::-webkit-scrollbar{
+  display: none;
+}
+
 
 .desktop .frame-image-projects-2{
   height: 100%;
@@ -321,7 +363,7 @@
 }
 
 .desktop .image-projects{
-  object-fit: cover;
+  object-fit: contain;
   width: 100%;
   height: 100%;
   padding: 1%;
@@ -414,23 +456,33 @@
   flex-shrink: 0;
   justify-content: start;
   gap: var(--gap);
-  animation: scroll 10s linear infinite;
   font-family: "Montserrat", Helvetica;
   font-size: 1.5rem;
   font-weight: 900;
-  gap: var(--gap);
-  animation: scroll 10s linear infinite;
+  animation: scroll 5s linear infinite;
+  user-select: none;
 }
 
 @keyframes scroll {
-  from {
+  0% {
     transform: translateX(0);
   }
 
-  to {
+  100% {
     transform: translateX(calc(-100% - var(--gap)));
   }
 }
+
+.marquee-projects:hover li:hover, .marquee-projects li{
+  filter: blur(0px);
+  transition: 0.5s;
+}
+
+.marquee-projects:hover li:not(:hover){
+  filter: blur(4px);
+  transition: 0.5s;
+}
+
 
 /* Top Right Hero finish */
 

@@ -8,7 +8,7 @@ export class HeroTopLeft extends Component {
             <div className="hero-top-left" >
                 <div className="frame-name">
                 <Image className="image-name" src="/assets/img/name.svg" alt="Faraaz Madni" />
-                <Image className="image-overlay" src="/assets/img/mountain.png" alt="Image of a mountain" />
+                <Image className="image-overlay" src="/assets/img/mountain.avif" alt="Image of a mountain" />
                 </div>
                 <div className="title">
                     <p>Data Engineer. Focused on making the world a better place.</p>

@@ -6,15 +6,17 @@ export class Header extends Component {
             <header className="navigation-bar">
                 <div className="frame-nav-l">
                     <a className="frame-logo" href="#">
-                        <div className="text-wrapper">{'>'}_</div>
+                        <div className="text-wrapper" >{'>'}_</div>
                     </a>
                 </div>
-                <ul className="frame-nav-r">
-                    <li className="buttons-navbar"><a href="/about">About</a></li>
-                    <li className="buttons-navbar">Services</li>
-                    <li className="buttons-navbar">Blog</li>
-                    <li className="buttons-navbar">Contact</li>
+                <div className="frame-nav-r">
+                <ul>
+                    <li className="buttons-navbar clickable"><a className="text-small" href="/about">About</a></li>
+                    <li className="buttons-navbar clickable"><a className="text-small" href="/services">Services</a></li>
+                    <li className="buttons-navbar clickable"><a className="text-small" href="/blog">Blog</a></li>
+                    <li className="buttons-navbar clickable"><a className="text-small" href="/contact">Contact</a></li>
                 </ul>
+                </div>
             </header>
         );
     }
