@@ -13,7 +13,6 @@
   gap: 10px;
   position: relative;
   width: 100%;
-
 }
 
 .desktop .main {
@@ -145,7 +144,7 @@ a{
   /* align-items: flex-start; */
   display: flex;
   flex: 1 1 auto;
-  flex-direction: row;
+  flex-direction: column;
   position: relative;
   width: 100%;
   gap: 8px;
@@ -157,8 +156,8 @@ a{
   flex: 1 1 auto;
   gap: 8px;
   position: relative;
-  min-width: 50%;
-  max-width: 50%;
+  min-width: 100%;
+  max-width: 100%;
 
 }
 
@@ -169,28 +168,30 @@ a{
   align-items: start;
   justify-items: space-between;
   border-radius: 40px;
-  gap: 1.5rem;
+  gap: 1rem;
   overflow: hidden;
   position: relative;
-  height: calc(80vh + .6rem);
+  height: calc(90vh + .6rem);
+  border-bottom: 1px solid var(--border-color)
 }
 
 .desktop .frame-name {
   display: flex;
   flex-direction: column;
   flex: 1;
-  flex-basis: 10%;
   align-items: center;
   max-height: 60%;
   position: relative;
   background-image: var(--gradient-main);
   width: 100%;
+  background-size: 200% 200%;
+  animation: animation-gradient 20s linear infinite;
 }
 
 .image-name {
   position: absolute;
-  width: 100%;
-  top: 12.5vh;
+  width: 90%;
+  top: 5rem;
   z-index: 1;
   animation: animation-image-name-start 1.5s linear;
 }
@@ -208,31 +209,49 @@ a{
 
 .desktop .image-overlay {
   z-index: 2;
-  height: 100%;
+  position: relative;
+  height: 150rem;
   width: 100%;
+  object-fit: cover;
+  overflow: hidden;
 }
-
-
-
 
 .desktop .title {
   font-family: "Montserrat", Helvetica;
+  display: flex;
+  flex: 0 1 auto;
+  align-self: center;
+  justify-self: center;
+  justify-content: flex-start;
+  color: var(--color);
   font-size: 150%;
   border-bottom: 1px solid var(--color);
-  overflow: hidden;
-  margin: 0 2rem 0 2rem;
-  padding-bottom: 2vw;
-
+  width: 100%;
+  line-height: normal;
+  padding: 0 1rem 1rem 1rem;
 }
 
 .desktop .description {
+  font-family: "Montserrat", Helvetica;
   display: flex;
-  flex: 1 1 auto;
+  flex: 1 0 auto;
+  flex-direction: column;
+  font-size: large;
   align-items: start;
   justify-content: start;
   position: relative;
   width: 100%;
-  padding: 0 2rem 0 2rem;
+  line-height: normal;
+  height: 15%;
+  overflow: clip;
+  padding: 0 1rem 1rem 1rem;
+}
+
+.desktop .description-text{
+  display: flex;
+  flex: 0;
+  word-wrap: normal;
+  padding: .25rem 0 .25rem 0;
 }
 
 .desktop .frame-arrow {
@@ -273,8 +292,9 @@ a{
   gap: 5rem;
   overflow: hidden;
   position: relative;
-  height: 40vh;
-  width: 100%;
+  height: 80vh;
+  width: 50%;
+  scroll-snap-align: start;
 }
 
 .desktop .frame-projects {
@@ -283,16 +303,16 @@ a{
   border-radius: 30px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   flex-direction: column;
-  gap: 2.5%;
   overflow: hidden;
   position: relative;
   width: 100%;
   height: 100%;
-  animation: animation-frame-projects 20s linear infinite;
+  gap: 1rem;
+  animation: animation-gradient 20s linear infinite;
 }
-@keyframes animation-frame-projects {
+@keyframes animation-gradient {
   0% {
     background-position: 0% 50%;
   }
@@ -308,10 +328,9 @@ a{
 
 
 .desktop .projects-header {
-  align-items: end;
+  align-items: center;
   justify-content: space-around;
   display: flex;
-  flex: 1 1 auto;
   position: relative;
   width: 100%;
   margin: 2.5% 0 0 0;

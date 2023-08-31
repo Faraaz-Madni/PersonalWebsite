@@ -26,31 +26,30 @@ export class HeroTopRight extends Component {
                         <p className="projects-header-text-right clickable" onClick={this.toggleInfo}>info</p>
                         <p className="projects-header-text-right clickable">site 🡥</p>
                     </div>
+                        <div
+                            className="frame-image-projects"
+                            id="image-projects" data-lenis-prevent>
+                            {/* Images here */}
+                            {showInfo && <div className="project-info">
+                                <h1> Project CrimeWatch<span className="blinkingCursor">_</span> </h1>
 
-                    <div
-                        className="frame-image-projects"
-                        id="image-projects" data-lenis-prevent>
-                        {/* Images here */}
-                        {showInfo && <div className="project-info">
-                            <h1> Project CrimeWatch<span className="blinkingCursor">_</span> </h1>
+                                <h2>✧ What is it? </h2>
+                                <p className="text-small"> ProjectCrimewatchKE will be a website that takes crime data from Kenyan news websites and displays crime (by day, week, month, year) on an interactive map. </p>
 
-                            <h2>✧ What is it? </h2>
-                            <p className="text-small"> ProjectCrimewatchKE will be a website that takes crime data from Kenyan news websites and displays crime (by day, week, month, year) on an interactive map. </p>
+                                <h2>✧ Considerations</h2>
+                                <ul className="text-small">
+                                    <li>Respecting each site's robots.txt and not  overloading sites we scrape from.</li>
+                                    <li>Lightweight delivery</li>
+                                    <li>Accessibility</li>
+                                    <li>Data protection, encryption</li>
+                                </ul>
+                            </div>}
+                            {!showInfo && <div className="frame-image-projects-2">
+                                <Image alt="'Crimewatch' is written alongside a map of Kenya." className="image-projects" src="/assets/img/CrimeWatchLogo.avif" />
+                                <Image alt="'Crimewatch' is written alongside a map of Kenya." className="image-projects" src="/assets/img/CrimeWatchLogo.webp" />
 
-                            <h2>✧ Considerations</h2>
-                            <ul className="text-small">
-                                <li>Respecting each site's robots.txt and not  overloading sites we scrape from.</li>
-                                <li>Lightweight delivery</li>
-                                <li>Accessibility</li>
-                                <li>Data protection, encryption</li>
-                            </ul>
-                        </div>}
-                        {!showInfo && <div className="frame-image-projects-2">
-                        <Image alt="'Crimewatch' is written alongside a map of Kenya." className="image-projects" src="/assets/img/CrimeWatchLogo.avif"/>
-                        <Image alt="'Crimewatch' is written alongside a map of Kenya." className="image-projects" src="/assets/img/CrimeWatchLogo.webp"/>
-
-                        </div>
-                        }
+                            </div>
+                            }
                     </div>
 
                     <div className="marquee-projects">
@@ -76,8 +75,8 @@ export class HeroTopRight extends Component {
                         </ul>
                     </div>
                 </div>
-                </div>
-                )
+            </div>
+        )
     }
 }
 
